@@ -6,5 +6,3 @@
 
 
 # <h1 align="center" id="heading">:wave: Welcome to MLOps Cohort 4 (September 2022)!</h1>
-
-Welcome to MLOps!
