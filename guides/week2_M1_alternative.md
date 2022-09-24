@@ -1,9 +1,9 @@
 # M1 Alternative Setup
 
 
-Due to the issues with the M1 chip, we've created an AWS Elastic Compute Cloud (EC2) server for those who are experiencing issues installing docker.
+Due to the issues with the M1 chip, we've created an AWS Elastic Compute Cloud (EC2) server for each student experiencing issues installing docker.
 
-This setup wil take roughly 10 minutes
+This setup will take roughly 10 minutes
 
 
 ## Cloning and PEM File Permissions
