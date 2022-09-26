@@ -2,7 +2,7 @@ version = 0.1
 [default]
 [default.deploy]
 [default.deploy.parameters]
-stack_name = "face-sentiment"
+stack_name = "sfm-face-sentiment"
 s3_bucket = "aws-sam-cli-managed-default-samclisourcebucket-pcatkpeq1n2w"
 s3_prefix = "face-sentiment"
 region = "us-east-1"
