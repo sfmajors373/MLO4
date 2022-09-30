@@ -23,7 +23,7 @@ async def bokeh(file: UploadFile = File(...), query: str = ''):
     #We await the string, then read it
     contents = await file.read()
     #Let's convert it from a string to a 8bit image
-    nparr = np.fromString(contents, np.uint8)
+    nparr = np.fromstring(contents, np.uint8)
     #Decode the image in color
     img = cv2.imdecode(nparr, cv2.IMREAD_COLOR)
     #We run the model to get the segmentation masks
@@ -31,7 +31,7 @@ async def bokeh(file: UploadFile = File(...), query: str = ''):
     #We add the background
     return_img = model.transform(img, mask, query)
     #We encode the image before returning it
-    _, png_img = cv.imencode(".PNG", return_img)
+    _, png_img = cv2.imencode(".PNG", return_img)
     return StreamingResponse(io.BytesIO(png_img.tobytes()), media_type="image/png")
 
 
