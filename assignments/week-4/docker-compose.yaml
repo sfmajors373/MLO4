@@ -3,20 +3,18 @@ version: "3"
 #Direct the face-bokeh to port 8001
 #Direct the face-emotion to port 8002
 services:
+  face_emotion_service:
+    build: ./face-emotion
+    ports:
+      - "8002:8000"
+  face_bokeh_service:
+    build: ./face-bokeh
+    ports:
+      - "8001:8000"
   health:
     build: .
     ports:
       - "8000:8000"
     depends_on:
-      - face_bokeh
-      - face_emotion
-
-  face_bokeh_service:
-    build: ./face-bokeh
-    ports:
-      - "8001:8000"
-
-  face_emotion_service:
-    build: ./face-emotion
-    ports:
-      - "8002:8000"
+      - face_bokeh_service
+      - face_emotion_service
