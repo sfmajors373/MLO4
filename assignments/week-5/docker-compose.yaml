@@ -1,0 +1,30 @@
+version: '3'
+
+services:
+  triton:
+    image: 'nvcr.io/nvidia/tritonserver:22.06-py3'
+    env_file: .aws.env
+    command: ['tritonserver', '--model-repository=s3://nvidia-triton-server-dj-bucket/models/']
+
+  face-bokeh:
+    build: ./face-bokeh
+    ports:
+      - '8001:8000'
+    depends_on:
+      - triton
+
+  face-emotion:
+    build: ./face-emotion
+    ports:
+      - '8002:8000'
+    depends_on:
+      - triton
+    
+  main:
+    build: .
+    ports:
+      - '8000:8000'
+    depends_on:
+      - face-bokeh
+      - face-emotion
+      - triton
