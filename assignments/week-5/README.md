@@ -4,8 +4,6 @@
      height="auto"/>
 </p>
 
-
-
 # <h1 align="center" id="heading">Week 5 - Deploying Face-Emotion and Background Changer with Nvidia Triton Server using Docker Compose and FastAPI on EC2</h1>
 
 ## 📚 Learning Objectives
@@ -16,8 +14,9 @@ By the end of this session, you will be able to:
 - Deploy using Docker Compose on Scalable Model Serving Framework
 
 ## 📦 Deliverables
+
 - A screenshot of `docker container ls` command on AWS EC2
-- A screenshot of http://ec2.ip.address:8000/docs
+- A screenshot of <http://ec2.ip.address:8000/docs>
 
 ## Create EC2 Instance
 
@@ -107,7 +106,7 @@ AWS_DEFAULT_REGION=us-east-1
 - Running the triton server alone
 
 ```bash
-docker run --env-file .envs3 -p8000:8000 -p8001:8001 -p8002:8002 --rm --net=host nvcr.io/nvidia/tritonserver:22.06-py3 tritonserver --model-repository=s3://triton-repository/models/
+docker run --env-file .aws.env -p8000:8000 -p8001:8001 -p8002:8002 --rm --net=host nvcr.io/nvidia/tritonserver:22.06-py3 tritonserver --model-repository=s3://triton-repository/models/
 ```
 
 # Docker Compose
