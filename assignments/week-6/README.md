@@ -16,7 +16,7 @@ By the end of this session, you will be able to:
 ## 📦 Deliverables
 
 - A screenshot of your ML Flow UI with your experiments
-- A screenshot of <http://ec2.ip.address:8000/docs>
+- A screenshot of <http://ec2.ip.address:8002/docs>
 
 # Deployment on EC2
 
